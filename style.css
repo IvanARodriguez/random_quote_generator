@@ -24,6 +24,7 @@ button{
     border-radius: .6rem;
     padding: .8rem 1rem;
     margin-bottom: 3rem;
+    cursor: pointer;
 }
 .quoteCard{
     min-height: 300px;

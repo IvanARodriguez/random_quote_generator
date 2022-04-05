@@ -30,37 +30,42 @@ const generateQuote = async ()=>{
 
 const setOptions = async ()=>{
     //get the quotes object
-    const rndQuote = await generateQuote();
+    let rndQuote = await generateQuote();
     for (let i = 0; i < rndQuote.length; i++) {
         let options = document.createElement("option");
         options.text = rndQuote[i].author;
         options.value = rndQuote[i].author;
         authors.appendChild(options);
-    } 
+    }
+
+    rndQuote = "";
 }
 
 setOptions();
 
 async function getAuthorQuote(){
     const selectedAuthor = authors.value;
-    const rndQuote = await generateQuote();
+    let rndQuote = await generateQuote();
     rndQuote.forEach(element => {
         if(element.author === selectedAuthor){
             text.innerHTML = `" ${element.text} "`;
             author.innerText = element.author;
         }
     });
+    rndQuote = "";
 }
 
 
 //function to display a random quote
 const showRandomQuote = async ()=>{
     //get the quotes object
-    const rndQuote = await generateQuote(); 
+    let rndQuote = await generateQuote(); 
     const randomizeNum =  Math.floor(Math.random() * rndQuote.length);
     text.innerHTML = `" ${rndQuote[randomizeNum].text} "`;
     author.innerText = rndQuote[randomizeNum].author;
     text.innerHTML.length === 0 ? btn.innerText = "Generate Random Quote" : btn.innerText = "Show Another Quote";
+
+    rndQuote = "";
 }
 
 
