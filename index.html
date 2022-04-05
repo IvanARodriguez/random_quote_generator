@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Random Quote Generator</title>
 </head>
 <body>
     
+    <button id="btn" onclick="showRandomQuote()">Show another quote</button>
 
+    <button onclick="getAuthorQuote()">Get Author quote</button>
+    <select name="authors" id="authors">
+
+    </select>
+    <div class="quoteCard">
+        <p id="text"></p>
+        <p id="author"></p>
+    </div>
+    
     <script src="app.js"></script>
 </body>
 </html>
